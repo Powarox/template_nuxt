@@ -1,5 +1,9 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+	<NuxtLayout :name="layout">
+		<NuxtPage />
+	</NuxtLayout>
 </template>
+
+<script setup>
+	const layout = "custom";
+</script>
