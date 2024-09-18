@@ -1,0 +1,55 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Déployer manuellement'
+        required: true
+        type: boolean
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Configuration de Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Ou la version que vous utilisez
+
+      - name: Cache des dépendances
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # Si vous souhaitez stocker l'artefact pour une réutilisation ou un test ultérieur
+      - name: Stockage des artefacts de build
+        uses: actions/upload-artifact@v3
+        with:
+          name: .output
+          path: .output  # Assurez-vous que c'est le bon chemin pour votre build Nuxt
+
+      # Déploiement conditionnel (uniquement sur la branche master ou déploiement manuel)
+      - name: Déploiement sur GitHub Pages
+        # if: github.ref == 'refs/heads/master' || github.event.inputs.deploy == 'true'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY_KEY }}
+          publish_dir: .output/public  # Le dossier contenant votre build Nuxt
