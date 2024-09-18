@@ -1,0 +1,94 @@
+// ############## Base ##############
+.bg-back {
+    background: var(--background);
+}
+
+// ############## Button ##############
+.full-btn {
+    height: 36px;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    background: var(--accent);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.full-secondary {
+    color: var(--white);
+    background: var(--secondary);
+}
+
+.full-error {
+    color: var(--white);
+    background: var(--error);
+}
+
+.fill-btn {
+    height: 36px;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    background: var(--white);
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.fill-secondary {
+    color: var(--white);
+    background: var(--secondary);
+}
+
+.fill-error {
+    color: var(--white);
+    background: var(--error);
+}
+
+// ############## Scrollbar ##############
+.scroller {
+    --scrollbar-width: thin;
+    --scrollbar-margin: 2px 0;
+    --scrollbar-width-legacy: 12px;
+    --scrollbar-color-thumb: #bbb;
+    --scrollbar-color-track: #fff;
+    --scrollbar-border-radius: 100px;
+    scrollbar-gutter: stable;
+}
+
+.scroller-hide {
+    scrollbar-width: none;
+}
+
+@supports selector(::-webkit-scrollbar) {
+    .scroller::-webkit-scrollbar {
+        max-width: var(--scrollbar-width-legacy);
+        max-height: var(--scrollbar-width-legacy);
+    }
+
+    .scroller::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-color-thumb);
+        border-radius: var(--scrollbar-border-radius);
+        cursor: pointer;
+    }
+
+    .scroller::-webkit-scrollbar-track {
+        margin: var(--scrollbar-margin);
+        background: var(--scrollbar-color-track);
+        border-radius: var(--scrollbar-border-radius);
+    }
+
+    .scroller-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
