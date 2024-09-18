@@ -1,1 +1,0 @@
-import{a as e,b as o,o as t,e as s}from"./entry.dc877123.js";const a={name:"About"},c={id:"about"},n=s("h1",null,"About Page",-1),_=[n];function r(d,i,u,p,f,l){return t(),o("div",c,_)}const h=e(a,[["render",r]]);export{h as default};
