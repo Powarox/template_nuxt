@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    // outline: none !important;
+}
+
+html,
+body {
+    color: var(--text);
+    background-color: var(--base);
+    font-family: 'Poppins', sans-serif;
+}

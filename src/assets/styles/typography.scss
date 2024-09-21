@@ -1,0 +1,49 @@
+@use 'sass:math';
+
+/**
+ * Convert Pixel value to rem value
+ */
+@function rem($pixel) {
+    @if (math.is-unitless($pixel)) {
+        @return math.div($pixel, 16)+rem;
+    }
+
+    @else {
+        @error 'Don\'t use units when using the rem() function, only numbers.';
+    }
+}
+
+h1 {
+    font-size: rem(32);
+    font-weight: 600;
+    line-height: 48px;
+}
+
+h2 {
+    font-size: rem(28);
+    font-weight: 600;
+    line-height: 44px;
+}
+
+h3 {
+    font-size: rem(24);
+    font-weight: 600;
+    line-height: 40px;
+}
+
+h4 {
+    font-size: rem(20);
+    font-weight: 600;
+    line-height: 36px;
+}
+
+h5 {
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: 32px;
+}
+
+p {
+    font-size: rem(16);
+    line-height: 24px;
+}

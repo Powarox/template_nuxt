@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --text: #FFFFFF;
+    --white: #FFFFFF;
+    --accent: #4451c7;
+    // --accent: #76c36f;
+
+    --base: #36424e;
+    --background: #0f172a;
+
+    --sidebar-w: 240px; // 70px - 240px
+    --sidebar-display: flex;
+
+    --animation: all .3s ease-in-out 0s;
+
+    --shadow: rgba(0, 0, 0, .24) 0px 3px 8px;
+    --shadow-card: rgba(77, 77, 77, .3) 2px 0px 10px;
+
+    --border: 1px solid #c7c5d0;
+}
+
+// Light theme
+:root {
+    --text: #36424e;
+    --base: #FFFFFF;
+    --background: #f6f6f7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Other
+// --label-red: #f7a1a1;
+// --label-blue: #a1d0f7;
+// --label-green: #a2f7a1;
+// --label-yellow: #f8e9a1;
+
+// --warn: #fc4756;
+// --alert: #ffbe0b;
