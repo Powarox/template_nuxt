@@ -74,7 +74,7 @@ export default defineNuxtConfig({
         ],
     },
 
-    // plugins: ['~/plugins/pinia'],
+    plugins: ['~/plugins/pinia'],
 
     /**
      * Tailwind Config
